@@ -14,6 +14,19 @@ public class SquareArrayAnalyzer {
      * @return true if each `inputArray[i]` has a corresponding `squaredValues[j]` such that `squaredValues[j] == inputArray[i] * inputArray[i]`
      */
     public static Boolean compare(Integer[] inputArray, Integer[] squaredValues) {
-        return null;
+        boolean allSquares = true;
+        int squareCounter = 0;
+        for (Integer square : squaredValues){
+            for (Integer root : inputArray){
+                if (Math.sqrt(square) == root){
+                    squareCounter++;
+                    break;
+                }
+            }
+        }
+        if (squareCounter == inputArray.length && squareCounter == squaredValues.length){
+            return true;
+        }
+        return false;
     }
 }

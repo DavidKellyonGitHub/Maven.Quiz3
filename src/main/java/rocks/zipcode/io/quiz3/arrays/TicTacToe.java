@@ -4,14 +4,33 @@ package rocks.zipcode.io.quiz3.arrays;
  * @author leon on 09/12/2018.
  */
 public class TicTacToe {
+    String[] row1 = new String[3];
+    String[] row2 = new String[3];
+    String [] row3 = new String[3];
+    String[] column1 = new String[3];
+    String[] column2 = new String[3];
+    String[] column3 = new String[3];
 
     public TicTacToe(String[][] board) {
+        this.row1 = new String[]{board[0][0], board[0][1], board[0][2]};
+        this.row2 = new String[]{board[1][0], board[1][1], board[1][2]};
+        this.row3 = new String[]{board[2][0], board[2][1], board[2][2]};
+        this.column1 = new String[]{board[0][0], board[1][0], board[2][0]};
+        this.column2 = new String[]{board[0][1],board[1][1], board[2][1]};
+        this.column3 = new String[]{board[0][2], board[1][2], board[2][2]};
     }
 
     public TicTacToe() {
     }
 
     public String[] getRow(Integer value) {
+        if (value == 1){
+            return row1;
+        } else if (value == 2){
+            return row2;
+        } else if (value ==3){
+            return row3;
+        }
         return null;
     }
 
