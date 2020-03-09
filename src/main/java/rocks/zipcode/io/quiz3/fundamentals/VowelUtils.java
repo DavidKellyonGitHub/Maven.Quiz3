@@ -5,7 +5,7 @@ package rocks.zipcode.io.quiz3.fundamentals;
  */
 public class VowelUtils {
     public static Boolean hasVowels(String word) {
-        char[] letters = word.toCharArray();
+        char[] letters = word.toLowerCase().toCharArray();
         for (char letter : letters){
             if (letter == 'a' || letter == 'e' || letter =='i' || letter == 'o' || letter == 'u'){
                 return true;
@@ -23,7 +23,7 @@ public class VowelUtils {
             if (VowelUtils.isVowel(letter)){
                 vowelCounter ++;
                 break;
-            } else if (vowelCounter == 0 && counter == letters.length-2){
+            } else if (!hasVowels(word)){
                 return -1;
             }
         }

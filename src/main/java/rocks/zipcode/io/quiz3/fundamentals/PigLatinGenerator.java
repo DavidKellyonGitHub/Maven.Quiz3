@@ -18,7 +18,7 @@ public class PigLatinGenerator {
                 firstVowelIndex = VowelUtils.getIndexOfFirstVowel(array[i]);
                 if (firstVowelIndex < 0){
                     array[i]+="ay";
-                } else {
+                } else if (firstVowelIndex >= 0){
                     placeholder += array[i].substring(firstVowelIndex);
                     placeholder += array[i].substring(0, firstVowelIndex);
                     placeholder += "ay";
