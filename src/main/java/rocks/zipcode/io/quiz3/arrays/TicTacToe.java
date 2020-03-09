@@ -24,29 +24,115 @@ public class TicTacToe {
     }
 
     public String[] getRow(Integer value) {
-        if (value == 1){
+        if (value == 0){
             return row1;
-        } else if (value == 2){
+        } else if (value == 1){
             return row2;
-        } else if (value ==3){
+        } else if (value ==2){
             return row3;
         }
         return null;
     }
 
     public String[] getColumn(Integer value) {
+        if (value == 0){
+            return column1;
+        } else if (value == 1) {
+            return column2;
+        } else if (value ==2){
+            return column3;
+        }
         return null;
     }
 
     public Boolean isRowHomogenous(Integer rowIndex) {
-        return null;
+        int counter = 0; 
+        String prevLetter = "";
+        if (rowIndex ==0) {
+            for (String letter : row1) {
+                if (prevLetter == letter) {
+                    counter++;
+                }
+                prevLetter = letter;
+
+            }
+            if (counter == 2)
+                return true;
+        } else if (rowIndex ==1) {
+            for (String letter : row2) {
+                if (prevLetter == letter) {
+                    counter++;
+                }
+                prevLetter = letter;
+
+            }
+            if (counter == 2)
+                return true;
+        } else if (rowIndex ==2) {
+            for (String letter : row3) {
+                if (prevLetter == letter) {
+                    counter++;
+                }
+                prevLetter = letter;
+
+            }
+            if (counter == 2)
+                return true;
+        }
+        return false;
     }
 
     public Boolean isColumnHomogeneous(Integer columnIndex) {
-        return null;
+        int counter = 0;
+        String prevLetter = "";
+        if (columnIndex ==0) {
+            for (String letter : column1) {
+                if (prevLetter == letter) {
+                    counter++;
+                }
+                prevLetter = letter;
+
+            }
+            if (counter == 2)
+                return true;
+        } else if (columnIndex ==1) {
+            for (String letter : column2) {
+                if (prevLetter == letter) {
+                    counter++;
+                }
+                prevLetter = letter;
+
+            }
+            if (counter == 2)
+                return true;
+        } else if (columnIndex ==2) {
+            for (String letter : column3) {
+                if (prevLetter == letter) {
+                    counter++;
+                }
+                prevLetter = letter;
+
+            }
+            if (counter == 2)
+                return true;
+        }
+        return false;
     }
 
     public String getWinner() {
+        if (isRowHomogenous(0)){
+            return row1[0];
+        } else if (isRowHomogenous(1)){
+            return row2[0];
+        } else if(isRowHomogenous(2)){
+            return row3[0];
+        } else if (isColumnHomogeneous(0)){
+            return column1[0];
+        } else if (isColumnHomogeneous(1)){
+            return column2[0];
+        } else if(isColumnHomogeneous(2)){
+            return column3[0];
+        }
         return null;
     }
 
